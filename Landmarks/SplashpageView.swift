@@ -9,7 +9,25 @@ import SwiftUI
 
 struct SplashpageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack(spacing: 30) {
+                Text("Welcome to Landmark Viewer!")
+                    .font(.title)
+                    .padding()
+                
+                LandmarkBG()
+                
+                Text("Choose a landmark to view.")
+                NavigationLink(destination: ContentView()) {
+                    DestinationButton(title: "Turtle Rock")
+                }
+                NavigationLink(destination: NewYorkView()) {
+                    DestinationButton(title: "Statue of Liberty")
+                }
+                Spacer()
+                
+            }
+        }
     }
 }
 
